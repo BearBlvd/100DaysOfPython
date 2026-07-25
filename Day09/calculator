@@ -1,0 +1,45 @@
+continue_calculating=True
+
+def choosen_operation(operation,num_1,num_2):
+
+    match operation :
+        case '+':
+           return num_1+num_2
+        case '-':
+            return num_1-num_2
+        case '*':
+            return num_1*num_2
+        case '/':
+            return num_1/num_2
+
+
+
+
+num_1=int(input("What's the first number ? "))
+
+operation=input("Pick an operation: ")
+
+num_2 = int(input("What's the second number? "))
+
+answer = choosen_operation(operation,num_1,num_2)
+
+print(f"{num_1} {operation} {num_2} = {answer} ")
+
+still_calculating=input(f"Type 'y' to continue with {answer}, or type 'n' to start")
+
+while (continue_calculating):
+
+    if still_calculating == 'y':
+
+        num_next=int(input(" what's the next number ? "))
+
+        operation=input("Pick an operation : ")
+
+        print(f"{answer} {operation} {num_next} = {choosen_operation(operation,answer,num_next)} ")
+
+        still_calculating=input(f"Type 'y' to continue with {answer}, or type 'n' to start")
+    
+    else:
+        still_calculating=False
+        break
+
