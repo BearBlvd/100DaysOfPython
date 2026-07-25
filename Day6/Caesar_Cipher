@@ -1,0 +1,36 @@
+def caeser(text,shift,direction):
+    word_en=[]
+    if direction=="decode":
+         shift*=-1
+         
+    for Letter in text: 
+        if Letter in alphabet:
+            word_pos=alphabet.index(Letter)
+            new_pos=word_pos+shift
+            word_en.append(alphabet[new_pos])
+        else:
+            word_en.append(Letter)
+     
+    word="".join(word_en)
+
+    return word
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+from art import logo
+print(logo)
+should_continue= True
+
+while should_continue: 
+
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift= shift % 26
+    print(f"{direction}d text is {caeser(text,shift,direction)}")
+    result=input("Type 'yes' if you want to go again .Otherwise type 'no' .\n ")
+
+    if result=="no":
+        should_continue=False
+        print('GoodBye')
