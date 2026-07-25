@@ -1,0 +1,18 @@
+N=int(input("Input number "))
+
+def prime_checker(number=N):
+
+    p_count=0
+
+    for i in range(2,N):
+
+        if N % i == 0 :
+            p_count+=1
+
+    
+    if p_count==2:
+        return "It's a prime number."
+    else :
+        return "It's not a prime number."
+    
+print(prime_checker(N))
