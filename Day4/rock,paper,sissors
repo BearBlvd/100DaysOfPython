@@ -1,7 +1,0 @@
-import random 
-play_com=random.randrange(1,4)
-
-play_you=input('For Rock 1,For Paper 2,For Scissors 3 : ')
-
-if play_com==1:
-    print('')
